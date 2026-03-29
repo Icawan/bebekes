@@ -1,0 +1,181 @@
+:root {
+  --olive: #4b523a;
+  --olive-dark: #3f4631;
+  --cream: #f2eee8;
+  --sand: #e8e2d8;
+  --text-soft: #d8dccf;
+  --ink: #1e2118;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #efece6;
+  color: var(--ink);
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.hero-section,
+.about-section {
+  background: var(--olive);
+}
+
+.brand-text,
+.hero-title,
+.section-title,
+.feature-title,
+.menu-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.brand-text {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.brand-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+}
+
+.navbar .nav-link {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: white;
+}
+
+.btn-order {
+  border-radius: 999px;
+  background: var(--sand);
+  color: #26291f;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-order:hover {
+  background: #ddd6ca;
+  color: #1f2218;
+}
+
+.hero-title {
+  line-height: 0.93;
+  font-size: clamp(2.7rem, 6vw, 5.5rem);
+  max-width: 15ch;
+}
+
+.hero-description {
+  max-width: 48ch;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.hero-image-wrap {
+  max-width: 500px;
+}
+
+.hero-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  min-height: 400px;
+}
+
+.features-section {
+  background: var(--cream);
+}
+
+.feature-title {
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.feature-text {
+  color: #636756;
+  margin: 0;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.menu-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.menu-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
+}
+
+.menu-card h4 {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  color: #f6f4ef;
+  font-size: 2rem;
+  line-height: 0.95;
+  max-width: 9ch;
+  margin: 0;
+}
+
+.menu-card:hover img {
+  transform: scale(1.04);
+}
+
+.about-copy {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.about-list {
+  color: var(--text-soft);
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.about-list li + li {
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .hero-title {
+    max-width: 100%;
+  }
+}
