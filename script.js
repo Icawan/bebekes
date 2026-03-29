@@ -20,8 +20,38 @@
     });
   };
 
+  const initLogoCarousel = () => {
+    const carouselEl = document.getElementById('logoCarousel');
+    if (!carouselEl || !window.bootstrap?.Carousel) return;
+
+    const carousel = new window.bootstrap.Carousel(carouselEl, {
+      interval: false,
+      ride: false,
+      wrap: true,
+      touch: true,
+    });
+
+    const intervalMs = 5000;
+    let timerId = window.setInterval(() => {
+      // Move backward so the logo appears to slide from left to right.
+      carousel.prev();
+    }, intervalMs);
+
+    carouselEl.addEventListener('mouseenter', () => {
+      if (!timerId) return;
+      window.clearInterval(timerId);
+      timerId = null;
+    });
+
+    carouselEl.addEventListener('mouseleave', () => {
+      if (timerId) return;
+      timerId = window.setInterval(() => carousel.prev(), intervalMs);
+    });
+  };
+
   const bootstrap = () => {
     initSmoothScroll();
+    initLogoCarousel();
   };
 
   document.addEventListener('DOMContentLoaded', bootstrap);

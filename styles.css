@@ -1,6 +1,5 @@
 :root {
   --olive: #4b523a;
-  --olive-dark: #3f4631;
   --cream: #f2eee8;
   --sand: #e8e2d8;
   --text-soft: #d8dccf;
@@ -30,24 +29,23 @@ body {
 .brand-text,
 .hero-title,
 .section-title,
-.feature-title,
-.menu-card h4 {
+.product-title,
+.mini-container h4 {
   font-family: 'Cormorant Garamond', serif;
 }
 
 .brand-text {
   font-weight: 600;
-  letter-spacing: 0.2px;
 }
 
 .brand-icon {
   display: inline-grid;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.2);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .navbar .nav-link {
@@ -57,7 +55,7 @@ body {
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-  color: white;
+  color: #fff;
 }
 
 .btn-order {
@@ -79,92 +77,107 @@ body {
   max-width: 15ch;
 }
 
-.hero-description {
-  max-width: 48ch;
+.hero-description,
+.about-copy,
+.about-list {
   color: var(--text-soft);
   line-height: 1.7;
 }
 
-.hero-image-wrap {
+.hero-image-wrap,
+.hero-carousel {
   max-width: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-inline: auto;
 }
 
 .hero-image {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
   border-radius: 1rem;
   min-height: 400px;
+  aspect-ratio: 1 / 1;
 }
 
-.features-section {
+.products-section {
   background: var(--cream);
-}
-
-.feature-title {
-  font-size: 2rem;
-  margin-bottom: 0.35rem;
-}
-
-.feature-text {
-  color: #636756;
-  margin: 0;
 }
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1rem;
 }
 
-.menu-card {
-  position: relative;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  min-height: 280px;
+.product-container {
+  background: #fff;
+  border: 1px solid #e7e0d6;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
-.menu-card img {
+.product-logo {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 250ms ease;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #faf8f5;
+  border-radius: 0.75rem;
 }
 
-.menu-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
-}
-
-.menu-card h4 {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 1;
-  color: #f6f4ef;
+.product-title {
   font-size: 2rem;
-  line-height: 0.95;
-  max-width: 9ch;
   margin: 0;
 }
 
-.menu-card:hover img {
-  transform: scale(1.04);
+.product-copy {
+  margin: 0;
+  color: #5c604f;
 }
 
-.about-copy {
-  color: var(--text-soft);
-  line-height: 1.7;
+.mini-grid {
+  margin-top: auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mini-container {
+  background: #f7f3ec;
+  border: 1px solid #e6dece;
+  border-radius: 0.7rem;
+  padding: 0.7rem 0.8rem;
+}
+
+.mini-container h4 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.mini-container p {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  color: #626553;
 }
 
 .about-list {
-  color: var(--text-soft);
   padding-left: 1.1rem;
   margin: 0;
 }
 
-.about-list li + li {
-  margin-top: 0.4rem;
+/* Force Bootstrap slide animation to appear left-to-right. */
+.hero-carousel .carousel-item-next.carousel-item-start,
+.hero-carousel .carousel-item-prev.carousel-item-end {
+  transform: translateX(0);
+}
+
+.hero-carousel .active.carousel-item-end {
+  transform: translateX(100%);
+}
+
+.hero-carousel .active.carousel-item-start {
+  transform: translateX(-100%);
 }
 
 @media (max-width: 991.98px) {
