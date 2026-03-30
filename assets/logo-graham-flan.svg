@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#5a2918"/>
+  <circle cx="400" cy="400" r="250" fill="#8a4b22" stroke="#d9a052" stroke-width="16"/>
+  <text x="400" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="62" fill="#f5cf7e">GRAHAM</text>
+  <rect x="260" y="340" width="280" height="120" rx="18" fill="#f1c47a"/>
+  <text x="400" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="56" fill="#f5cf7e">FLAN DESSERT</text>
+</svg>
