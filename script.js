@@ -49,9 +49,23 @@
     });
   };
 
+
+  const initVideoCarousel = () => {
+    const videoCarouselEl = document.getElementById('videoCarousel');
+    if (!videoCarouselEl) return;
+
+    videoCarouselEl.addEventListener('slide.bs.carousel', () => {
+      const videos = videoCarouselEl.querySelectorAll('video');
+      videos.forEach((video) => {
+        video.pause();
+      });
+    });
+  };
+
   const bootstrap = () => {
     initSmoothScroll();
     initLogoCarousel();
+    initVideoCarousel();
   };
 
   document.addEventListener('DOMContentLoaded', bootstrap);
